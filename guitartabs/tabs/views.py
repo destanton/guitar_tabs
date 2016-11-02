@@ -9,7 +9,7 @@ class SongView(TemplateView):
 
     def get_context_data(self, song_link):
         context = super().get_context_data()
-        page = requests.get("https://www.ultimate-guitar.com/" + song_link)
+        page = requests.get("https://tabs.ultimate-guitar.com/" + song_link)
         parser = BeautifulSoup(page.text, "html.parser")
         context["chords"] = parser.find_all(id="cont")
         print(context)
