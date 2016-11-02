@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -5,10 +6,12 @@
     <title>Song Tab</title>
   </head>
   <body>
-    <div class="container">
+    {% block content %}
+    <div class="container-fluid">
     {% autoescape off %}
       {{ chords }}
     {% endautoescape %}
+    {% endblock %}
     </div>
   </body>
 </html>

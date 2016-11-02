@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -5,14 +6,32 @@
     <title>Guitar Tabs</title>
   </head>
   <body>
-    <form class="" action="" method="get">
-      <input type="text" name="song_title" class="form-control">
-      <input type="submit" name="" value="Submit!">
-      <div class="">
-      {% for link, song in song_links %}
-        <a href="{{ link }}">{{ song }}</a> <br>
-      {% endfor %}
-      </div>
-    </form>
+    {% block content %}
+    <div class="container-fluid">
+        <div class="form-group">
+          <div class="col-xs-3">
+            <label for="ex2"></label>
+              <form class="" action="" method="get">
+                <input type="text" id="ex2" name="song_title" placeholder="Search by Song Title" class="form-control">
+                <input type="submit" name="" class="btn btn-success btn-xs pull-right" value="Submit!">
+              </form>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+      <table class="table table-striped">
+        <tbody>
+          <tr>
+            {% for link, song in song_links %}
+              <a href="{{ link }}">{{ song }}</a> <br>
+            {% endfor %}
+            </div>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    {% endblock %}
+
+
   </body>
 </html>
