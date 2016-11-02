@@ -4,6 +4,18 @@ import requests
 from bs4 import BeautifulSoup
 
 
+class SongView(TemplateView):
+    template_name = "song.html"
+
+    def get_context_data(self, song_link):
+        context = super().get_context_data()
+        page = requests.get("https://www.ultimate-guitar.com/" + song_link)
+        parser = BeautifulSoup(page.text, "html.parser")
+        context["chords"] = parser.find_all(id="cont")
+        print(context)
+        return context
+
+
 class IndexView(TemplateView):
     template_name = "index.html"
 
@@ -21,7 +33,7 @@ class IndexView(TemplateView):
                     new_list.append((song_link, song.get_text()))
             print(new_list)
             # for song in new_list:
-            #     song_link = song.replace("http://tabs.ultimate-guitar.com/", " ")
+            #     song_link = song.get("href).replace("http://tabs.ultimate-guitar.com/", " ")
             #     print(song_link)
-            context["song_link"] = new_list
+            context["song_links"] = new_list
         return context

@@ -9,7 +9,7 @@
       <input type="text" name="song_title" class="form-control">
       <input type="submit" name="" value="Submit!">
       <div class="">
-      {% for link, song in song_link %}
+      {% for link, song in song_links %}
         <a href="{{ link }}">{{ song }}</a> <br>
       {% endfor %}
       </div>
