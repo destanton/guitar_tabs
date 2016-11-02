@@ -15,10 +15,11 @@ class IndexView(TemplateView):
             parser = BeautifulSoup(data.text, "html.parser")
             results = parser.find_all("a")
             new_list = []
-            for counter, tag in enumerate(results):
-                if tag.get("href"):
-                    new_list.append(tag.get("href"))
-
+            for song in results:
+                if song.get("class") == ["song", "result-link"]:
+                    song_link = song.get("href").replace("https://tabs.ultimate-guitar.com/", "")
+                    new_list.append((song_link, song.get_text()))
+            print(new_list)
             # for song in new_list:
             #     song_link = song.replace("http://tabs.ultimate-guitar.com/", " ")
             #     print(song_link)
