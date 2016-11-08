@@ -7,31 +7,38 @@
   </head>
   <body>
     {% block content %}
+    <nav class="navbar-header">
     <div class="container-fluid">
-        <div class="form-group">
-          <div class="col-xs-3">
+        <div class="collapse navbar-collapse">
+          
             <label for="ex2"></label>
-              <form class="" action="" method="get">
+              <form class="navbar-form navbar-left" action="" method="get">
                 <input type="text" id="ex2" name="song_title" placeholder="Search by Song Title" class="form-control">
-                <input type="submit" name="" class="btn btn-success btn-xs pull-right" value="Submit!">
+                <input type="submit" name="" class="btn btn-success btn-sm" value="Submit!">
               </form>
+
             </div>
+  </nav>
+        <div class="col-md-8">
+              <table class="tabs-table table table-striped table-bordered">
+                <br>
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for link, song in song_links %}
+                    <tr>
+                      <td>
+                        <a href="{{ link }}">{{ song }}</a>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+              </table>
         </div>
     </div>
-    <div class="container-fluid">
-      <table class="table table-striped">
-        <tbody>
-          <tr>
-            {% for link, song in song_links %}
-              <a href="{{ link }}">{{ song }}</a> <br>
-            {% endfor %}
-            </div>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    {% endblock %}
-
-
   </body>
 </html>
+    {% endblock %}

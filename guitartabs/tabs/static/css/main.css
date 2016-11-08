@@ -1,0 +1,21 @@
+.tabs-table{
+  background-color: white;
+  text-align: center;
+}
+.tabs-table a{
+  color: darkblue;
+  font-size: 16px;
+
+}
+
+.tabs-table th{
+  text-align: center;
+  font-size: 20px;
+  color: darkblue;
+}
+
+.navbar-custom {
+  background-color: lightgrey;
+  color: white;
+  border-radius: 0;
+}

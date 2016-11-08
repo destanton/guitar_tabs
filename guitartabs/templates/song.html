@@ -8,10 +8,15 @@
   <body>
     {% block content %}
     <div class="container-fluid">
+      <div class="col-md-6 col-md-offset-3">
+        <a class="btn btn-warning"href="{% url 'index_view' %}">Back</a>
+
     {% autoescape off %}
       {{ chords }}
     {% endautoescape %}
-    {% endblock %}
+    </div>
     </div>
   </body>
 </html>
+    {% endblock %}
+class="btn btn-success btn-xs"

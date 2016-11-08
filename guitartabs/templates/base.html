@@ -5,16 +5,29 @@
     <meta charset="utf-8">
     <title>TabAwesome!</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" media="screen" title="no title">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" media="screen" title="no title">
     <style media="screen">
       body {
-        background-color: lightgrey;
+        background-color: lightblue;
+        color: darkblue;
       }
     </style>
   </head>
   <body>
+    <nav class="navbar navbar-default navbar-custom navbar-fixed top">
 
+
+    <div class="container-fluid">
+      <div class="navbar-header">
+
+
+      <h1 class="navbar-brand">Guitar Tabs For You!</h1>
+
+</div>
+</nav>
     {% block content %}
-
+    <h3 class="navbar-brand">Search for Guitar Tabs by Song Title</h3>
+    </div>
     {% endblock %}
 
   </body>
