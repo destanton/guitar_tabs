@@ -7,18 +7,17 @@
   </head>
   <body>
     {% block content %}
-    <nav class="navbar-header">
+    <nav class="navbar navbar-header">
     <div class="container-fluid">
         <div class="collapse navbar-collapse">
-          
             <label for="ex2"></label>
               <form class="navbar-form navbar-left" action="" method="get">
                 <input type="text" id="ex2" name="song_title" placeholder="Search by Song Title" class="form-control">
                 <input type="submit" name="" class="btn btn-success btn-sm" value="Submit!">
               </form>
-
             </div>
   </nav>
+  <div class="container-fluid">
         <div class="col-md-8">
               <table class="tabs-table table table-striped table-bordered">
                 <br>
@@ -38,6 +37,7 @@
                 </tbody>
               </table>
         </div>
+    </div>
     </div>
   </body>
 </html>

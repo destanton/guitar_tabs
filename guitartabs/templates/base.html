@@ -15,16 +15,16 @@
   </head>
   <body>
     <nav class="navbar navbar-default navbar-custom navbar-fixed top">
-
-
-    <div class="container-fluid">
-      <div class="navbar-header">
-
-
-      <h1 class="navbar-brand">Guitar Tabs For You!</h1>
-
-</div>
-</nav>
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <div class="collapse navbar-collapse">
+              <a class="navbar-brand">Guitar Tabs For You!</a>
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="{% url 'index_view' %}">Home</a></li>
+                </ul>
+          </div>
+        </div>
+    </nav>
     {% block content %}
     <h3 class="navbar-brand">Search for Guitar Tabs by Song Title</h3>
     </div>
